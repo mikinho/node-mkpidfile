@@ -1,4 +1,4 @@
-# pidfile
+# mkpidfile
 
 Copyright (c) 2017 Michael Welter <michael@yammm.com>
 
@@ -12,7 +12,7 @@ The pidfile created will be unlinked when exiting if process.on("exit") is emitt
 
 ## Install
 
-    $ npm install --save pidfile
+    $ npm install --save mkpidfile
 
 ## Usage
 
@@ -21,9 +21,9 @@ The pidfile created will be unlinked when exiting if process.on("exit") is emitt
 // Setup signal handlers so process exit event can be triggered
 [ "SIGINT", "SIGTERM" ].forEach(signal => process.on(signal, process.exit));
 
-require("pidfile")("/var/run/example.pid");
+require("mkpidfile")("/var/run/example.pid");
 ```
 
 ## Debugging
 
-NODE_DEBUG=pidfile
+NODE_DEBUG=mkpidfile

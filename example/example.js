@@ -2,7 +2,7 @@
 
 const pidfile = module.filename.slice(0, -2) + "pid";
 
-require("../pidfile")(pidfile);
+require("../mkpidfile")(pidfile);
 
 // Setup signal handlers so process exit event can be triggered
 [ "SIGINT", "SIGTERM", "SIGHUP" ].forEach(signal => process.on(signal, process.exit));

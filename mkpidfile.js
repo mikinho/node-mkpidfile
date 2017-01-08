@@ -1,12 +1,12 @@
 /**
  * Helper module for creating, locking, writing and closing proper pidfiles.
  *
- * @module pidfile
+ * @module mkpidfile
  * @author Michael Welter <michael@yammm.com>
  * @copyright Copyright (c) 2017 Michael Welter <michael@yammm.com>
  * @license MIT
  * @example
- * require("pidfile")("/var/run/example.pid");
+ * require("mkpidfile")("/var/run/example.pid");
 */
 
 "use strict";
@@ -15,13 +15,13 @@ const cluster = require("cluster");
 const fs = require("fs");
 const os = require("os");
 const util = require("util");
-const debuglog = util.debuglog("pidfile");
+const debuglog = util.debuglog("mkpidfile");
 
 /**
  * Closes and removes a pidfile on process exit
  *
  * @param {string} pidfile - Path to the pidfile.
- * @param {number} fd - Integer file descriptor of locked pidfile.
+ * @param {number} fd - Integer file descriptor of the pidfile.
  * @private
  */
 function onExit(pidfile, fd) {
